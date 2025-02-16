@@ -41,7 +41,7 @@ o Toki;
 ### Creating a function with a parameter
 ```
 nimi nasin TokiTawaJanNi = (linja JanNi) => {
-    o toki e (o linja.wan e JanNi e " o, toki!");
+    o toki e (o linja.Wan e JanNi e " o, toki!");
 } => ala;
 
 o TokiTawaJanNi e "jan ale";
@@ -53,5 +53,5 @@ nimi nasin PanaENanpa = (nanpa Nanpa) => {
     o pana e Nanpa * 2;
 } => nanpa;
 
-o toki e (o nanpa.tawa_linja e (o PanaENanpa e 5));
+o toki e (o nanpa.TawaLinja e (o PanaENanpa e 5));
 ```
