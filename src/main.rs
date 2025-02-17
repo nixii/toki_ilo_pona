@@ -7,7 +7,7 @@ pub mod location;
 use lexer::Lexer;
 
 fn main() {
-    let lexer = Lexer::new("+-+a".to_owned());
+    let lexer = Lexer::new("+-+\n-a".to_owned());
     let tokens = lexer.tokenize();
 
     match tokens {

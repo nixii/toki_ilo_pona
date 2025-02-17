@@ -25,6 +25,8 @@ impl Lexer {
         let mut err: Option<Box<dyn Error>> = None;
 
         for ch in iter {
+            let mut ignore = false;
+
             match ch {
                 '+' => tokens.push(Token::new(TokenInfo::Add, loc.clone())),
                 '-' => tokens.push(Token::new(TokenInfo::Subtract, loc.clone())),
@@ -32,6 +34,7 @@ impl Lexer {
                 '/' => tokens.push(Token::new(TokenInfo::Divide, loc.clone())),
                 '\n' => {
                     loc.next_row();
+                    ignore = true;
                 },
                 ch if ch.is_whitespace() => {
                 },
@@ -41,7 +44,7 @@ impl Lexer {
                 }
             }
 
-            loc.next_col();
+            if !ignore {loc.next_col(); }
         }
 
         match err {
