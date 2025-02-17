@@ -1,18 +1,17 @@
 
-// Make the lang module visible
-pub mod lang;
+pub mod token;
+pub mod lexer;
+pub mod error;
+pub mod location;
 
-// Get the lexer
-use lang::lexer::Lexer;
+use lexer::Lexer;
 
-// Run
 fn main() {
+    let lexer = Lexer::new("+-+a".to_owned());
+    let tokens = lexer.tokenize();
 
-    // Testing string
-    let input_str = "1 + 2";
-
-    // Lex the string to get tokens!
-    let lexer = Lexer::new(String::from(input_str));
-    let tokens = lexer.run_lexer();
-    println!("{:?}", tokens)
+    match tokens {
+        Err(e) => println!("{}", e.get()),
+        Ok(t) => println!("{:?}", t)
+    }
 }
