@@ -21,6 +21,8 @@ pub enum TokenInfo {
     LeftBrace,
     RightBrace,
 
+    Semicolon,
+
     Add,
     Subtract,
     Multiply,

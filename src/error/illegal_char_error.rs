@@ -10,7 +10,7 @@ pub struct IllegalCharError {
 
 impl Error for IllegalCharError {
     fn get(&self) -> String {
-        format!("[PAKALA] - sitelen ike li lon. sitelen ni li ni: \"{}\". sitelen ni li lon ni: {}", self.character, self.location)
+        format!("[MOLI] - sitelen ike li lon. sitelen ni li ni: \"{}\". sitelen ni li lon ni: {}", self.character, self.location)
     }
 }
 
